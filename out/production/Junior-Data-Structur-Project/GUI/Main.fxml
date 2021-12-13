@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1390.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
    <children>
-      <Text layoutX="268.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello World" />
+      <LineChart fx:id="ChartComp" layoutX="471.0" layoutY="-7.0" prefHeight="677.0" prefWidth="922.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button layoutX="37.0" layoutY="583.0" mnemonicParsing="false" onAction="#GenerateNUms" prefHeight="50.0" prefWidth="130.0" text="Generate numbers" />
+      <CheckBox fx:id="Insertion" layoutX="21.0" layoutY="32.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Insertion" />
+      <CheckBox fx:id="Merge" layoutX="21.0" layoutY="92.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Merge" />
+      <CheckBox fx:id="Heap" layoutX="22.0" layoutY="152.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Heap" />
+      <CheckBox fx:id="Counting" layoutX="22.0" layoutY="292.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Counting" />
+      <CheckBox fx:id="Quick" layoutX="22.0" layoutY="222.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Quick" />
+      <CheckBox fx:id="Radix" layoutX="22.0" layoutY="362.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Radix" />
+      <Button layoutX="277.0" layoutY="583.0" mnemonicParsing="false" onAction="#LoadGraph" prefHeight="50.0" prefWidth="130.0" text="Show in Graphs" />
+      <TextField layoutX="227.0" layoutY="230.0" />
    </children>
 </AnchorPane>

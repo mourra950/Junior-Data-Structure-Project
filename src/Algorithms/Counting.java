@@ -1,38 +1,38 @@
 package Algorithms;
 
+import java.util.Arrays;
+
 public class Counting {
-    void sort(char[] arr)
+    static void countSort(int[] arr)
     {
-        int n = arr.length;
-
-        // The output character array that will have sorted arr
-        char[] output = new char[n];
-
-        // Create a count array to store count of individual
-        // characters and initialize count array as 0
-        int[] count = new int[256];
-        for (int i = 0; i < 256; ++i)
-            count[i] = 0;
-
-        // store count of each character
-        for (int i = 0; i < n; ++i)
-            ++count[arr[i]];
-
-        // Change count[i] so that count[i] now contains actual
-        // position of this character in output array
-        for (int i = 1; i <= 255; ++i)
-            count[i] += count[i - 1];
-
-        // Build the output character array
-        // To make it stable we are operating in reverse order.
-        for (int i = n - 1; i >= 0; i--) {
-            output[count[arr[i]] - 1] = arr[i];
-            --count[arr[i]];
+        int max = Arrays.stream(arr).max().getAsInt();
+        int min = Arrays.stream(arr).min().getAsInt();
+        int range = max - min + 1;
+        int[] count = new int[range];
+        int[] output = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i] - min]++;
         }
 
-        // Copy the output array to arr, so that arr now
-        // contains sorted characters
-        for (int i = 0; i < n; ++i)
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for(int i = arr.length - 1; i >= 0; i--) {
+            output[count[arr[i] - min] - 1] = arr[i];
+            count[arr[i] - min]--;
+        }
+
+        for(int i = 0; i < arr.length; i++) {
             arr[i] = output[i];
+        }
+    }
+
+    static void printArray(int[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
     }
 }
