@@ -7,6 +7,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1390.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
    <children>
@@ -26,6 +27,9 @@
       <CheckBox fx:id="Quick" layoutX="22.0" layoutY="222.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Quick" />
       <CheckBox fx:id="Radix" layoutX="22.0" layoutY="362.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Radix" />
       <Button layoutX="277.0" layoutY="583.0" mnemonicParsing="false" onAction="#LoadGraph" prefHeight="50.0" prefWidth="130.0" text="Show in Graphs" />
-      <TextField layoutX="227.0" layoutY="230.0" />
+      <TextField layoutX="227.0" layoutY="190.0" />
+      <TextField layoutX="227.0" layoutY="320.0" />
+      <Text layoutX="227.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of element" />
+      <Text layoutX="227.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step Size" />
    </children>
 </AnchorPane>

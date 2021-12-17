@@ -2,7 +2,7 @@ package Algorithms;
 
 import java.util.Arrays;
 
-public class Counting {
+public class CountingAlgo {
     int steps=0;
 
      public void countSort(int[] arr)

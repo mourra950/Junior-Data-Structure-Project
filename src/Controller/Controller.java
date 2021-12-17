@@ -1,7 +1,10 @@
 package Controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import Main.algotest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -43,35 +46,33 @@ public class Controller {
     }
 
     @FXML
-    void LoadGraph(ActionEvent event) {
-        System.out.println("i am here");
-        XYChart.Series<String,Number> series = new XYChart.Series<String,Number>();
-        System.out.println("i am 2");
+    void LoadGraph(ActionEvent event) throws IOException {
 
-        series.getData().add(new XYChart.Data<String,Number>("0",20));
-        series.getData().add(new XYChart.Data<String,Number>("20",20));
-        series.getData().add(new XYChart.Data<String,Number>("30",20));
-        series.getData().add(new XYChart.Data<String,Number>("40",5000));
-        series.getData().add(new XYChart.Data<String,Number>("50",10000));
-        System.out.println("i am 3");
+        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+        algotest test = new algotest();
+        int[] RR = test.call();
+//        algotest test = new algotest();
+//        int[] RR = test.call();
+        for (int i = 0; i < RR.length; i++) {
+            series.getData().add(new XYChart.Data<String, Number>(String.valueOf(i), RR[i]));
+        }
+        //        series.getData().add(new XYChart.Data<String,Number>("20",20));
+//        series.getData().add(new XYChart.Data<String,Number>("30",20));
+//        series.getData().add(new XYChart.Data<String,Number>("40",5000));
+//        series.getData().add(new XYChart.Data<String,Number>("50",10000));
+//        System.out.println("i am 3");
 
         series.setName("test");
-        System.out.println("i am 4");
+
 
         ChartComp.getData().add(series);
-        System.out.println("i am 5");
+
 
     }
 
     @FXML
     void initialize() {
-        assert ChartComp != null : "fx:id=\"ChartComp\" was not injected: check your FXML file 'Main.fxml'.";
-        assert Counting != null : "fx:id=\"Counting\" was not injected: check your FXML file 'Main.fxml'.";
-        assert Heap != null : "fx:id=\"Heap\" was not injected: check your FXML file 'Main.fxml'.";
-        assert Insertion != null : "fx:id=\"Insertion\" was not injected: check your FXML file 'Main.fxml'.";
-        assert Merge != null : "fx:id=\"Merge\" was not injected: check your FXML file 'Main.fxml'.";
-        assert Quick != null : "fx:id=\"Quick\" was not injected: check your FXML file 'Main.fxml'.";
-        assert Radix != null : "fx:id=\"Radix\" was not injected: check your FXML file 'Main.fxml'.";
+
 
     }
 
