@@ -2,6 +2,7 @@ package Algorithms;
 
 public class Quick {
     int steps = 0;
+    int[] arr_steps;
 
     public void swap(int[] arr, int i, int j) {
         int temp = arr[i];
@@ -37,10 +38,8 @@ public class Quick {
         }
     }
 
-    static void printArray(int[] arr, int size) {
-        for (int i = 0; i < size; i++)
-            System.out.print(arr[i] + " ");
-
-        System.out.println();
+    public int[] getArr() {
+        return arr_steps;
     }
+
 }

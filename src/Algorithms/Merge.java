@@ -8,7 +8,7 @@ public class Merge {
     public Merge(int[] arr) {
         i = 0;
         steps = 0;
-        arr_steps=new int[arr.length];
+        arr_steps = new int[arr.length];
         sort(arr, 0, arr.length - 1);
     }
 
@@ -16,8 +16,8 @@ public class Merge {
         int n1 = m - l + 1;
         int n2 = r - m;
 
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int[] L = new int[n1];
+        int[] R = new int[n2];
         steps += 4;
 
         for (int i = 0; i < n1; ++i) {
@@ -75,7 +75,7 @@ public class Merge {
         }
     }
 
-    public int[] getArr_steps() {
+    public int[] getArr() {
         return arr_steps;
     }
 

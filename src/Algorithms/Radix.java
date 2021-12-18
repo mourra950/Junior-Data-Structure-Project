@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Radix {
     int steps = 0;
+    int[] arr_steps;
 
     public int getMax(int[] arr, int n) {
         int mx = arr[0];
@@ -54,8 +55,8 @@ public class Radix {
         }
     }
 
-    static void print(int[] arr, int n) {
-        for (int i = 0; i < n; i++)
-            System.out.print(arr[i] + " ");
+    public int[] getArr() {
+        return arr_steps;
     }
+
 }

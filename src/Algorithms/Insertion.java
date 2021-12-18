@@ -14,7 +14,6 @@ public class Insertion {
                 arr[j + 1] = arr[j];
                 j = j - 1;
                 steps += 2;
-
             }
             arr[j + 1] = key;
             steps += 3;

@@ -2,6 +2,7 @@ package Algorithms;
 
 public class Heap {
     int steps = 0;
+    int[] arr_steps;
 
     public void sort(int[] arr) {
         int n = arr.length;
@@ -43,11 +44,9 @@ public class Heap {
     }
 
 
-    static void printArray(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
+    public int[] getArr() {
+        return arr_steps;
     }
+
 
 }

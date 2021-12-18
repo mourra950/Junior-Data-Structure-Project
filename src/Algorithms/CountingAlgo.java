@@ -3,17 +3,17 @@ package Algorithms;
 import java.util.Arrays;
 
 public class CountingAlgo {
-    int steps=0;
+    int steps = 0;
+    int[] arr_steps;
 
-     public void countSort(int[] arr)
-    {
+    public void countSort(int[] arr) {
 
         int max = Arrays.stream(arr).max().getAsInt();
         int min = Arrays.stream(arr).min().getAsInt();
         int range = max - min + 1;
         int[] count = new int[range];
         int[] output = new int[arr.length];
-        steps+=5;
+        steps += 5;
         for (int i = 0; i < arr.length; i++) {
             count[arr[i] - min]++;
             steps++;
@@ -24,23 +24,26 @@ public class CountingAlgo {
             steps++;
         }
 
-        for(int i = arr.length - 1; i >= 0; i--) {
+        for (int i = arr.length - 1; i >= 0; i--) {
             output[count[arr[i] - min] - 1] = arr[i];
             count[arr[i] - min]--;
-            steps+=2;
+            steps += 2;
         }
 
-        for(int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = output[i];
             steps++;
         }
     }
 
-    static void printArray(int[] arr)
-    {
+    static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println("");
     }
+    public int[] getArr() {
+        return arr_steps;
+    }
+
 }
