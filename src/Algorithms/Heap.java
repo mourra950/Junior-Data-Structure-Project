@@ -3,6 +3,10 @@ package Algorithms;
 public class Heap {
     int steps = 0;
     int[] arr_steps;
+    public Heap(int[] arr)
+    {
+
+    }
 
     public void sort(int[] arr) {
         int n = arr.length;

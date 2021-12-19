@@ -6,6 +6,12 @@ public class Radix {
     int steps = 0;
     int[] arr_steps;
 
+    public Radix(int[] arr) {
+        steps = 0;
+        radixsort(arr, arr.length);
+    }
+
+
     public int getMax(int[] arr, int n) {
         int mx = arr[0];
         steps++;
@@ -33,7 +39,6 @@ public class Radix {
             count[i] += count[i - 1];
             steps++;
         }
-        // Build the output array
         for (i = n - 1; i >= 0; i--) {
             output[count[(arr[i] / exp) % 10] - 1] = arr[i];
             count[(arr[i] / exp) % 10]--;
@@ -47,11 +52,13 @@ public class Radix {
     }
 
     public void radixsort(int[] arr, int n) {
+        int i = 0;
         int m = getMax(arr, n);
         steps++;
         for (int exp = 1; m / exp > 0; exp *= 10) {
             countSort(arr, n, exp);
             steps++;
+            arr_steps[i++] = steps;
         }
     }
 
