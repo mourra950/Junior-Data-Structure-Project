@@ -32,6 +32,7 @@ public class Controller {
     private CheckBox Quick;
     @FXML
     private CheckBox Radix;
+
     @FXML
     void GenerateNUms(ActionEvent event) throws IOException {
         int fileSize;
@@ -39,7 +40,7 @@ public class Controller {
             fileSize = Integer.parseInt(ElementSIze.getText());
             Randnumbers.GenerateNums(fileSize);
             System.out.println("it is a integer keep going champ");
-        } catch(Exception x) {
+        } catch (Exception x) {
             System.out.println("not a integer");
         }
 
@@ -48,9 +49,12 @@ public class Controller {
 
     @FXML
     void LoadGraph(ActionEvent event) throws IOException {
+        ChartComp.getData().clear();
+        ChartComp.cacheProperty().unbind();
         int numoftrueboxes = 0;
         boolean[] boxesBool = new boolean[6];
-        CheckBox[] boxes = {Counting, Heap, Insertion, Merge, Quick, Radix};
+        CheckBox[] boxes = {Insertion, Merge, Heap, Quick, Counting, Radix};
+        String[] AlgoNames = {"Insertion", "Merge", "Heap", "Quick", "Counting", "Radix"};
         for (int i = 0; i < 6; i++) {
             if (boxes[i].isSelected()) {
                 numoftrueboxes++;
@@ -61,21 +65,23 @@ public class Controller {
             }
         }
         if (numoftrueboxes < 1) {
-            AlertBox.display("no boxes is picked","please pick a box");
+            AlertBox.display("no boxes is picked", "please pick a box");
+            return;
         }
-for(int z=0;z<6;z++) {
-    XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
-    algotest test = new algotest();
-    int[] RR = test.call();
-//        algotest test = new algotest();
-//        int[] RR = test.call();
-    for (int i = 0; i < RR.length; i++) {
-        series.getData().add(new XYChart.Data<String, Number>(String.valueOf(i), RR[i]));
+        for (int z = 0; z < 6; z++) {
+            if (boxesBool[z]) {
+                XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+                algotest test = new algotest();
+                int[] RR = test.call(z);
+                for (int i = 0; i < RR.length; i++) {
+                    series.getData().add(new XYChart.Data<String, Number>(String.valueOf(i), RR[i]));
+
+                }
+                series.setName(AlgoNames[z]);
+                ChartComp.getData().add(series);
+            }
+        }
     }
-    series.setName("test");
-    ChartComp.getData().add(series);
-}
-}
 
 }
 

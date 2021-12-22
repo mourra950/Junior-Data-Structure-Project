@@ -1,15 +1,14 @@
 package Main;
 
-import Algorithms.Insertion;
-import Algorithms.Merge;
+import Algorithms.*;
+import javafx.scene.control.CheckBox;
 
 import java.io.*;
 import java.util.ArrayList;
 
 
 public class algotest {
-    //public static void main(String[] args) throws IOException {
-    public int[] call() throws IOException {
+    public int[] call(int Algorithim) throws IOException {
         String myPath = "src/Data.txt";
         File file = new File(myPath);
 
@@ -24,16 +23,36 @@ public class algotest {
         }
         System.out.println(arrayL.size());
         array = new int[arrayL.size()];
-        for (int j = 0; j < arrayL.size()-1; j++) {
-            System.out.println(j);
+        for (int j = 0; j < arrayL.size() - 1; j++) {
+
             array[j] = arrayL.get(j);
         }
-        //for(int j=0;j<i;j++)
-        //System.out.println(array[j]);
-        //Insertion algo = new Insertion(array);
-        //int[] RR = algo.getArr();
-        Merge algo = new Merge(array);
-        int[] RR = algo.getArr();
+        int[] RR = new int[0];
+        if (Algorithim == 0) {
+            Insertion algo = new Insertion(array);
+            RR = algo.getArr();
+        }
+        if (Algorithim == 1) {
+            Merge algo = new Merge(array);
+            RR = algo.getArr();
+        }
+        if (Algorithim == 2) {
+            Heap algo = new Heap(array);
+            RR = algo.getArr();
+        }
+        if (Algorithim == 3) {
+            Quick algo = new Quick(array);
+            RR = algo.getArr();
+        }
+        if (Algorithim == 4) {
+            CountingAlgo algo = new CountingAlgo(array);
+            RR = algo.getArr();
+        }
+        if (Algorithim == 5) {
+            Radix algo = new Radix(array);
+            RR = algo.getArr();
+        }
+
         //for (int z = 0; z < RR.length; z++)
         //  System.out.println(RR[z]);
         return RR;

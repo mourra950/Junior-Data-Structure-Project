@@ -4,6 +4,19 @@ public class Quick {
     int steps = 0;
     int[] arr_steps;
 
+    public Quick(int[] arr) {
+        int[] temp = arr;
+        steps = 0;
+        arr_steps = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            steps = 0;
+            arr = temp;
+            quickSort(arr, 0, i);
+            arr_steps[i] = steps;
+
+        }
+    }
+
     public void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];

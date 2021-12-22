@@ -1,5 +1,7 @@
 package Algorithms;
 
+import java.util.Arrays;
+
 public class Merge {
     int steps = 0;
     int i;
@@ -8,8 +10,15 @@ public class Merge {
     public Merge(int[] arr) {
         i = 0;
         steps = 0;
+        int[] temp = arr;
         arr_steps = new int[arr.length];
-        sort(arr, 0, arr.length - 1);
+        for (int i = 0; i < arr.length; i++) {
+            arr = temp;
+            steps = 0;
+            sort(arr, 0, i);
+            arr_steps[i] = steps;
+            System.out.println(Arrays.toString(arr));
+        }
     }
 
     void merge(int[] arr, int l, int m, int r) {
@@ -70,8 +79,8 @@ public class Merge {
             sort(arr, m + 1, r);
 
             merge(arr, l, m, r);
-            steps += 3;
-            arr_steps[i++] = steps;
+            steps++;
+
         }
     }
 

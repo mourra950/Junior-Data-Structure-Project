@@ -3,13 +3,21 @@ package Algorithms;
 public class Heap {
     int steps = 0;
     int[] arr_steps;
-    public Heap(int[] arr)
-    {
 
+    public Heap(int[] arr) {
+        int[] temp=arr;
+        steps = 0;
+        arr_steps = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            steps = 0;
+            arr=temp;
+            sort(arr, i);
+            arr_steps[i] = steps;
+        }
     }
 
-    public void sort(int[] arr) {
-        int n = arr.length;
+    public void sort(int[] arr, int n) {
+
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
             steps++;
@@ -21,6 +29,7 @@ public class Heap {
             heapify(arr, i, 0);
             steps += 4;
         }
+
     }
 
 
