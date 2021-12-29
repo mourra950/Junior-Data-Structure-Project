@@ -17,8 +17,8 @@ public class Merge {
             steps = 0;
             sort(arr, 0, i);
             arr_steps[i] = steps;
-            System.out.println(Arrays.toString(arr));
         }
+        arr = temp;
     }
 
     void merge(int[] arr, int l, int m, int r) {

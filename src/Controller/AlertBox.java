@@ -16,7 +16,7 @@ public class AlertBox {
         label.setText(message);
         Button closeButton = new Button("Close");
         closeButton.setOnAction(e -> window.close());
-        VBox layout = new VBox(50);
+        VBox layout = new VBox(60);
         layout.getChildren().addAll(label, closeButton);
         layout.setAlignment(Pos.CENTER);
         Scene scene = new Scene(layout);

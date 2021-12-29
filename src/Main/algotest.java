@@ -23,10 +23,15 @@ public class algotest {
         }
         System.out.println(arrayL.size());
         array = new int[arrayL.size()];
+
+
+
         for (int j = 0; j < arrayL.size() - 1; j++) {
 
             array[j] = arrayL.get(j);
         }
+
+
         int[] RR = new int[0];
         if (Algorithim == 0) {
             Insertion algo = new Insertion(array);

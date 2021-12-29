@@ -41,7 +41,7 @@ public class Controller {
             Randnumbers.GenerateNums(fileSize);
             System.out.println("it is a integer keep going champ");
         } catch (Exception x) {
-            System.out.println("not a integer");
+            AlertBox.display("error","you need to input a number please try again.");
         }
 
     }
@@ -55,6 +55,7 @@ public class Controller {
         boolean[] boxesBool = new boolean[6];
         CheckBox[] boxes = {Insertion, Merge, Heap, Quick, Counting, Radix};
         String[] AlgoNames = {"Insertion", "Merge", "Heap", "Quick", "Counting", "Radix"};
+        //Selected
         for (int i = 0; i < 6; i++) {
             if (boxes[i].isSelected()) {
                 numoftrueboxes++;
@@ -64,6 +65,8 @@ public class Controller {
                 boxesBool[i] = false;
             }
         }
+
+
         if (numoftrueboxes < 1) {
             AlertBox.display("no boxes is picked", "please pick a box");
             return;

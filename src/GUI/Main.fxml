@@ -23,13 +23,15 @@
       <CheckBox fx:id="Insertion" layoutX="21.0" layoutY="32.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Insertion" />
       <CheckBox fx:id="Merge" layoutX="21.0" layoutY="92.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Merge" />
       <CheckBox fx:id="Heap" layoutX="22.0" layoutY="152.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Heap" />
-      <CheckBox fx:id="Counting" layoutX="22.0" layoutY="292.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Counting" />
-      <CheckBox fx:id="Quick" layoutX="22.0" layoutY="222.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Quick" />
-      <CheckBox fx:id="Radix" layoutX="22.0" layoutY="362.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Radix" />
+      <CheckBox fx:id="Counting" layoutX="22.0" layoutY="262.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Counting" />
+      <CheckBox fx:id="Quick" layoutX="22.0" layoutY="212.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Quick" />
+      <CheckBox fx:id="Radix" layoutX="22.0" layoutY="315.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="Radix" />
+      <CheckBox fx:id="nSquare" layoutX="21.0" layoutY="362.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="nSquare" />
+      <CheckBox fx:id="nlogn" layoutX="21.0" layoutY="409.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="nlogn" />
       <Button layoutX="277.0" layoutY="583.0" mnemonicParsing="false" onAction="#LoadGraph" prefHeight="50.0" prefWidth="130.0" text="Show in Graphs" />
-      <TextField fx:id="ElementSIze" layoutX="227.0" layoutY="190.0" />
-      <TextField fx:id="StepSize" layoutX="227.0" layoutY="320.0" />
-      <Text layoutX="227.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of element" />
-      <Text layoutX="227.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step Size" />
+      <TextField fx:id="ElementSIze" layoutX="247.0" layoutY="100.0" />
+      <TextField fx:id="StepSize" layoutX="247.0" layoutY="330.0" />
+      <Text layoutX="247.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of element" />
+      <Text layoutX="247.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step Size" />
    </children>
 </AnchorPane>
