@@ -13,12 +13,13 @@ public class Radix {
         System.out.println(" Radix");
         for (int i = 0; i < arr.length; i++) {
             steps = 0;
-            arr=temp;
+            arr = temp;
             radixsort(arr, i);
             arr_steps[i] = steps;
 
 
         }
+        arr = temp;
     }
 
 

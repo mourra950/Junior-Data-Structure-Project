@@ -14,6 +14,7 @@ public class Heap {
             sort(arr, i);
             arr_steps[i] = steps;
         }
+        arr=temp;
     }
 
     public void sort(int[] arr, int n) {

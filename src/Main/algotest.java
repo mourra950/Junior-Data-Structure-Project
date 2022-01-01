@@ -23,8 +23,8 @@ public class algotest {
         }
         array = new int[arrayL.size()];
 
-        for (int j = 0; j < arrayL.size() - 1; j++) {
-
+        for (int j = 0; j < arrayL.size() - 1; j++)
+        {
             array[j] = arrayL.get(j);
         }
 
@@ -58,8 +58,11 @@ public class algotest {
         }if (Algorithim == 7) {
             nlogn algo = new nlogn(array);
             RR = algo.getArr();
-        }if (Algorithim == 7) {
-            nlogn algo = new nlogn(array);
+        }if (Algorithim == 8) {
+            Kplusn algo = new Kplusn(array);
+            RR = algo.getArr();
+        }if (Algorithim == 9) {
+            dkplusdn algo = new dkplusdn(array);
             RR = algo.getArr();
         }
         return RR;

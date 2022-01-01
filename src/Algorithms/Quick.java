@@ -15,6 +15,7 @@ public class Quick {
             arr_steps[i] = steps;
 
         }
+        arr=temp;
     }
 
     public void swap(int[] arr, int i, int j) {

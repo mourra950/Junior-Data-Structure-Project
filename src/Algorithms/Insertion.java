@@ -20,7 +20,6 @@ public class Insertion {
             arr[j + 1] = key;
             steps += 3;
             arr_steps[i] = steps;
-//            System.out.println(Arrays.toString(arr));
         }
 
     }
