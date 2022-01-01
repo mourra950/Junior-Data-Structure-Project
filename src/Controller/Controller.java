@@ -32,7 +32,11 @@ public class Controller {
     private CheckBox Quick;
     @FXML
     private CheckBox Radix;
+    @FXML
+    private CheckBox nSquare;
 
+    @FXML
+    private CheckBox nlogn;
     @FXML
     void GenerateNUms(ActionEvent event) throws IOException {
         int fileSize;
@@ -52,11 +56,11 @@ public class Controller {
         ChartComp.getData().clear();
         ChartComp.cacheProperty().unbind();
         int numoftrueboxes = 0;
-        boolean[] boxesBool = new boolean[6];
-        CheckBox[] boxes = {Insertion, Merge, Heap, Quick, Counting, Radix};
-        String[] AlgoNames = {"Insertion", "Merge", "Heap", "Quick", "Counting", "Radix"};
+        boolean[] boxesBool = new boolean[8];
+        CheckBox[] boxes = {Insertion, Merge, Heap, Quick, Counting, Radix, nSquare,nlogn};
+        String[] AlgoNames = {"Insertion", "Merge", "Heap", "Quick", "Counting", "Radix","nSquare","nlogn"};
         //Selected
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 8; i++) {
             if (boxes[i].isSelected()) {
                 numoftrueboxes++;
                 boxesBool[i] = true;
@@ -71,7 +75,7 @@ public class Controller {
             AlertBox.display("no boxes is picked", "please pick a box");
             return;
         }
-        for (int z = 0; z < 6; z++) {
+        for (int z = 0; z < 8; z++) {
             if (boxesBool[z]) {
                 XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
                 algotest test = new algotest();

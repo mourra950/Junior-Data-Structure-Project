@@ -21,16 +21,12 @@ public class algotest {
         while ((st = br.readLine()) != null) {
             arrayL.add(Integer.parseInt(st));
         }
-        System.out.println(arrayL.size());
         array = new int[arrayL.size()];
-
-
 
         for (int j = 0; j < arrayL.size() - 1; j++) {
 
             array[j] = arrayL.get(j);
         }
-
 
         int[] RR = new int[0];
         if (Algorithim == 0) {
@@ -56,10 +52,16 @@ public class algotest {
         if (Algorithim == 5) {
             Radix algo = new Radix(array);
             RR = algo.getArr();
+        }if (Algorithim == 6) {
+            nSquare algo = new nSquare(array);
+            RR = algo.getArr();
+        }if (Algorithim == 7) {
+            nlogn algo = new nlogn(array);
+            RR = algo.getArr();
+        }if (Algorithim == 7) {
+            nlogn algo = new nlogn(array);
+            RR = algo.getArr();
         }
-
-        //for (int z = 0; z < RR.length; z++)
-        //  System.out.println(RR[z]);
         return RR;
     }
 }
