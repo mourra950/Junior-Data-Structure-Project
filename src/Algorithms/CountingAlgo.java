@@ -14,6 +14,7 @@ public class CountingAlgo {
         int[] temp = arr;
         arr_steps = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
+            steps=0;
             arr = temp;
             arr_steps[i]=count_Sort(arr,i);
         }
