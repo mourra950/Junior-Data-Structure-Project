@@ -74,6 +74,9 @@ public class algotest {
         if (Algorithim == 9) {
             dkplusdn algo = new dkplusdn(array);
             RR = algo.getArr();
+        }if (Algorithim == 10) {
+            Selection algo = new Selection(array);
+            RR = algo.getArr();
         }
         return RR;
     }

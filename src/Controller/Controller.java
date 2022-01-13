@@ -15,7 +15,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 public class Controller {
-    String[] AlgoNames = {"Insertion", "Merge", "Heap", "Quick", "Counting", "Radix", "nSquare", "nlogn", "Kplusn", "dkplusdn"};
+    public CheckBox Selection;
+    String[] AlgoNames = {"Insertion", "Merge", "Heap", "Quick", "Counting", "Radix", "nSquare", "nlogn", "Kplusn", "dkplusdn","Selection"};
 
     public TextField ElementSIze;
 
@@ -34,11 +35,7 @@ public class Controller {
     private CheckBox Quick;
     @FXML
     private CheckBox Radix;
-    @FXML
-    private CheckBox nSquare;
 
-    @FXML
-    private CheckBox nlogn;
 
     @FXML
     void GenerateNUms(ActionEvent event) throws IOException {
@@ -68,10 +65,10 @@ public class Controller {
         int tbox = -1;
         int numoftrueboxes = 0;
         boolean[] boxesBool = new boolean[8];
-        CheckBox[] boxes = {Insertion, Merge, Heap, Quick, Counting, Radix};
+        CheckBox[] boxes = {Insertion, Merge, Heap, Quick, Counting, Radix,Selection};
 
         //Selected
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             if (boxes[i].isSelected()) {
                 numoftrueboxes++;
                 boxesBool[i] = true;
@@ -86,7 +83,7 @@ public class Controller {
             AlertBox.display("no boxes is picked", "please pick a box");
             return;
         } else if (numoftrueboxes == 1) {
-            if (tbox == 0) {
+            if (tbox == 0 || tbox==6) {
                 graphme(6);
             } else if (tbox == 2 || tbox == 1 || tbox==3) {
                 graphme(7);
@@ -98,8 +95,12 @@ public class Controller {
         }
 
 
-        for (int z = 0; z < 6; z++) {
+        for (int z = 0; z < 7; z++) {
             if (boxesBool[z]) {
+                if(z==6)
+                {
+                    z=10;
+                }
                 graphme(z);
             }
         }

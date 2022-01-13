@@ -31,5 +31,6 @@
       <TextField fx:id="StepSize" layoutX="276.0" layoutY="422.0" />
       <Text layoutX="296.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of element" />
       <Text layoutX="326.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step Size" />
+      <CheckBox fx:id="Selection" layoutX="25.0" layoutY="607.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="153.0" text="selection" />
    </children>
 </AnchorPane>
