@@ -1,5 +1,8 @@
 package Algorithms;
 
+import Generator.Sorted;
+
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Merge {
@@ -7,7 +10,7 @@ public class Merge {
     int i;
     int[] arr_steps;
 
-    public Merge(int[] arr) {
+    public Merge(int[] arr) throws IOException {
         i = 0;
         steps = 0;
         int[] temp = arr;
@@ -18,6 +21,7 @@ public class Merge {
             sort(arr, 0, i);
             arr_steps[i] = steps;
         }
+        Sorted.generatesortedfile(arr, "Merge");
         arr = temp;
     }
 

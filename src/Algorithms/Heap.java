@@ -1,10 +1,14 @@
 package Algorithms;
 
+import Generator.Sorted;
+
+import java.io.IOException;
+
 public class Heap {
     int steps = 0;
     int[] arr_steps;
 
-    public Heap(int[] arr) {
+    public Heap(int[] arr) throws IOException {
         int[] temp=arr;
         steps = 0;
         arr_steps = new int[arr.length];
@@ -14,6 +18,7 @@ public class Heap {
             sort(arr, i);
             arr_steps[i] = steps;
         }
+        Sorted.generatesortedfile(arr, "Heap");
         arr=temp;
     }
 

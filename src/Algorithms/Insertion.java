@@ -1,12 +1,15 @@
 package Algorithms;
 
+import Generator.Sorted;
+
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Insertion {
     int steps = 0;
     int[] arr_steps;
 
-    public Insertion(int[] arr) {
+    public Insertion(int[] arr) throws IOException {
 
         arr_steps = new int[arr.length];
         for (int i = 1; i < arr.length; ++i) {
@@ -21,6 +24,7 @@ public class Insertion {
             steps += 3;
             arr_steps[i] = steps;
         }
+        Sorted.generatesortedfile(arr, "Insertion");
 
     }
 

@@ -1,10 +1,14 @@
 package Algorithms;
 
+import Generator.Sorted;
+
+import java.io.IOException;
+
 public class Quick {
     int steps = 0;
     int[] arr_steps;
 
-    public Quick(int[] arr) {
+    public Quick(int[] arr) throws IOException {
         int[] temp = arr;
         steps = 0;
         arr_steps = new int[arr.length];
@@ -15,6 +19,7 @@ public class Quick {
             arr_steps[i] = steps;
 
         }
+        Sorted.generatesortedfile(arr, "Quick");
         arr=temp;
     }
 

@@ -1,12 +1,15 @@
 package Algorithms;
 
+import Generator.Sorted;
+
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Radix {
     int steps = 0;
     int[] arr_steps;
 
-    public Radix(int[] arr) {
+    public Radix(int[] arr) throws IOException {
         int[] temp = arr;
         steps = 0;
         arr_steps = new int[arr.length];
@@ -19,6 +22,7 @@ public class Radix {
 
 
         }
+        Sorted.generatesortedfile(arr, "Radix");
         arr = temp;
     }
 

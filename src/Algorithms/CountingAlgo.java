@@ -1,12 +1,15 @@
 package Algorithms;
 
+import Generator.Sorted;
+
+import java.io.IOException;
 import java.util.Arrays;
 
 public class CountingAlgo {
     int steps = 0;
     int[] arr_steps;
 
-    public CountingAlgo(int[] arr) {
+    public CountingAlgo(int[] arr) throws IOException {
         steps = 0;
         int[] temp = arr;
         arr_steps = new int[arr.length];
@@ -14,6 +17,7 @@ public class CountingAlgo {
             arr = temp;
             arr_steps[i]=count_Sort(arr,i);
         }
+        Sorted.generatesortedfile(arr, "Counting");
         arr=temp;
     }
 

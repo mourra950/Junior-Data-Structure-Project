@@ -46,7 +46,7 @@ public class Controller {
         try {
             fileSize = Integer.parseInt(ElementSIze.getText());
             Randnumbers.GenerateNums(fileSize);
-            System.out.println("it is a integer keep going champ");
+            AlertBox.display("Success","File Generated");
         } catch (Exception x) {
             AlertBox.display("error", "you need to input a number please try again.");
         }
