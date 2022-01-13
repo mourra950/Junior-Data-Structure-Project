@@ -86,9 +86,9 @@ public class Controller {
             AlertBox.display("no boxes is picked", "please pick a box");
             return;
         } else if (numoftrueboxes == 1) {
-            if (tbox == 0 || tbox == 3) {
+            if (tbox == 0) {
                 graphme(6);
-            } else if (tbox == 2 || tbox == 1) {
+            } else if (tbox == 2 || tbox == 1 || tbox==3) {
                 graphme(7);
             } else if (tbox == 4) {
                 graphme(8);
