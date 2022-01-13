@@ -20,7 +20,7 @@ public class Selection {
             sort(arr, i);
             arr_steps[i] = steps;
         }
-        Sorted.generatesortedfile(arr, "Merge");
+        Sorted.generatesortedfile(arr, "Selection");
         arr = temp;
     }
 
