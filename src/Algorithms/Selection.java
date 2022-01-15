@@ -37,6 +37,7 @@ public class Selection {
                     min_idx = j;
                     steps++;
                 }
+                steps++;
             }
 
             // Swap the found minimum element with the first
